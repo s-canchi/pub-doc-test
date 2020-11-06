@@ -1,4 +1,4 @@
-name: UseCase Release
+name: Documentation Release
 
 on:
   push:
