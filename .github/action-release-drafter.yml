@@ -10,6 +10,8 @@ categories:
   - title: 'Specifications & Documentation'
     labels:
       - 'proposedspecsupdate'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+
 template: |
   ## What's Changed
 
