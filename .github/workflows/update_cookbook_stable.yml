@@ -10,17 +10,17 @@ jobs:
       - name: merge Cookbook submodule to stable
         run: |
           git submodule update --init --recursive --remote docs/the-fair-cookbook
-      - name: Set output variables
-        id: vars
-        run: |
-          echo "::set-output name=pr_title::${{ github.event.pull_request.title }}"
+      #- name: Set output variables
+        #id: vars
+        #run: |
+          #echo "::set-output name=pr_title::${{ github.event.pull_request.title }}"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
             base: stable
             token: ${{ secrets.ALLTHEACTIONS }}
             commit-message: Update stable
-            title: ${{ steps.vars.outputs.pr_title }}
+            title: ${{ github.event.pull_request.title }}
             body: |
               - Dependency updates
               - requires review
